@@ -1,0 +1,33 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Login - Activate</title>
+    <link rel="stylesheet" href="{% static 'login.css' %}" />
+  </head>
+  <body>
+    <main class="center">
+      <div class="card">
+        <h2>Sign in</h2>
+        <form id="loginForm" novalidate>
+          <label class="field">
+            <span>Username or email</span>
+            <input type="text" name="user" id="user" placeholder="you@example.com or username" required />
+          </label>
+          <label class="field">
+            <span>Password</span>
+            <input type="password" name="password" id="password" placeholder="••••••••" required minlength="6" />
+          </label>
+          <div class="actions">
+            <button type="submit" class="btn primary">Sign In</button>
+          </div>
+          <p class="muted">Don't have an account? <a href="{% url 'signup' %}">Create one</a></p>
+        </form>
+      </div>
+    </main>
+    <script src="{% static 'login.js' %}"></script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Sign up - Activate</title>
+    <link rel="stylesheet" href="{% static 'signup.css' %}" />
+  </head>
+  <body>
+    <main class="center">
+      <div class="card">
+        <h2>Create account</h2>
+        <form id="signupForm" novalidate>
+          <label class="field">
+            <span>Username</span>
+            <input type="text" name="username" id="username" placeholder="yourusername" required />
+          </label>
+          <label class="field">
+            <span>Email</span>
+            <input type="email" name="email" id="email" placeholder="you@example.com" required />
+          </label>
+          <label class="field">
+            <span>Password</span>
+            <input type="password" name="password" id="password" placeholder="Create a password" required minlength="6" />
+          </label>
+          <label class="field">
+            <span>Confirm password</span>
+            <input type="password" name="confirm" id="confirm" placeholder="Repeat password" required minlength="6" />
+          </label>
+          <div class="actions">
+            <button type="submit" class="btn primary">Sign up</button>
+          </div>
+          <p class="muted">Already have an account? <a href="{% url 'login' %}">Sign in</a></p>
+        </form>
+      </div>
+    </main>
+    <script src="{% static 'signup.js' %}"></script>
+  </body>
+</html>

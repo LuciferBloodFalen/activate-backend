@@ -1,0 +1,23 @@
+:root{--bg:#0f1724;--card:#0b1220;--accent:#6ea8fe;--muted:#94a3b8;--white:#ffffff}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(180deg,#07122a 0%,#071b2f 100%);color:var(--white);}
+.hero{min-height:100vh;display:grid;place-items:center;padding:48px}
+.container{text-align:center;max-width:820px}
+.brand{font-size:48px;letter-spacing:1px;margin-bottom:8px}
+.tag{color:var(--muted);font-size:18px;margin-bottom:24px}
+.actions{display:flex;gap:12px;justify-content:center}
+.btn{display:inline-block;padding:12px 20px;border-radius:8px;background:transparent;color:var(--white);border:1px solid rgba(255,255,255,0.08);text-decoration:none}
+.btn.primary{background:linear-gradient(90deg,var(--accent),#7dd3fc);color:#06203a;border:0}
+
+/* profile */
+.profile{margin-top:28px;display:flex;gap:16px;align-items:center;justify-content:center;background:rgba(255,255,255,0.02);padding:18px;border-radius:12px;max-width:720px;margin-left:auto;margin-right:auto}
+.avatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#b6e0ff);display:grid;place-items:center;color:#06203a;font-weight:700;font-size:28px}
+.info{text-align:left}
+.info .name{font-weight:700;font-size:20px}
+.info .email{color:var(--muted);font-size:14px}
+.meta{color:var(--muted);font-size:13px;margin-top:6px}
+.profile-actions{margin-top:12px;display:flex;gap:8px}
+
+/* responsive */
+@media (max-width:480px){.brand{font-size:32px}.tag{font-size:16px;padding:0 12px}}

@@ -1,5 +1,5 @@
 """
-WSGI config for backend_mode project.
+WSGI config for User_Authentication_System project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'backend_mode.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'User_Authentication_System.settings')
 
 application = get_wsgi_application()
