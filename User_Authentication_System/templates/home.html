@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="center">
+        <div class="card">
+            <div class="welcome">Welcome — a fast and simple auth demo.</div>
+
+        {% if user.is_authenticated %}
+            <div class="status">Logged in as <strong>{{ user.username }}</strong>.</div>
+            <div class="btn-group">
+                <a class="btn" href="{% url 'dashboard' %}">Dashboard</a>
+                <form action="{% url 'logout' %}" method="post" style="margin: 0;">
+                    {% csrf_token %}
+                    <button class="btn" type="submit">Logout</button>
+                </form>
+            </div>
+        {% else %}
+            <div class="status">You are not logged in.</div>
+            <div class="btn-group">
+                <a class="btn" href="{% url 'login' %}">Sign in</a>
+                <a class="btn primary" href="{% url 'signup' %}">Get started</a>
+            </div>
+        {% endif %}
+    </div>
+    </div>
+{% endblock %}

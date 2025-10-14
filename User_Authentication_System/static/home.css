@@ -1,23 +1,317 @@
-:root{--bg:#0f1724;--card:#0b1220;--accent:#6ea8fe;--muted:#94a3b8;--white:#ffffff}
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%}
-body{font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(180deg,#07122a 0%,#071b2f 100%);color:var(--white);}
-.hero{min-height:100vh;display:grid;place-items:center;padding:48px}
-.container{text-align:center;max-width:820px}
-.brand{font-size:48px;letter-spacing:1px;margin-bottom:8px}
-.tag{color:var(--muted);font-size:18px;margin-bottom:24px}
-.actions{display:flex;gap:12px;justify-content:center}
-.btn{display:inline-block;padding:12px 20px;border-radius:8px;background:transparent;color:var(--white);border:1px solid rgba(255,255,255,0.08);text-decoration:none}
-.btn.primary{background:linear-gradient(90deg,var(--accent),#7dd3fc);color:#06203a;border:0}
+/* ========================================
+   CSS Variables - Theme Colors
+   ======================================== */
+:root {
+    --bg-primary: #0f1724;
+    --bg-secondary: #0b1220;
+    --text-primary: #e6eef8;
+    --text-muted: #9aa4b2;
+    --brand-color: #7c5cff;
+    --accent-color: #00d4ff;
+    --card-bg: #0f1728;
+    --border-color: rgba(255, 255, 255, 0.06);
+}
 
-/* profile */
-.profile{margin-top:28px;display:flex;gap:16px;align-items:center;justify-content:center;background:rgba(255,255,255,0.02);padding:18px;border-radius:12px;max-width:720px;margin-left:auto;margin-right:auto}
-.avatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#b6e0ff);display:grid;place-items:center;color:#06203a;font-weight:700;font-size:28px}
-.info{text-align:left}
-.info .name{font-weight:700;font-size:20px}
-.info .email{color:var(--muted);font-size:14px}
-.meta{color:var(--muted);font-size:13px;margin-top:6px}
-.profile-actions{margin-top:12px;display:flex;gap:8px}
+/* ========================================
+   Base Styles
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* responsive */
-@media (max-width:480px){.brand{font-size:32px}.tag{font-size:16px;padding:0 12px}}
+html,
+body {
+    height: 100%;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(180deg, #071021 0%, #0b1320 100%);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========================================
+   Layout
+   ======================================== */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 24px 16px;
+}
+
+.hero {
+    padding: 32px 0 48px;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+}
+
+/* ========================================
+   Header
+   ======================================== */
+.site-header {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+}
+
+.header-row .brand {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--brand-color);
+}
+
+.header-row nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.inline-form {
+    display: inline-block;
+}
+
+/* ========================================
+   Typography
+   ======================================== */
+h1, h2 {
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+p {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.welcome {
+    font-size: 18px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+}
+
+.status {
+    font-size: 15px;
+    margin: 12px 0;
+}
+
+.muted {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+/* ========================================
+   Cards
+   ======================================== */
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 28px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    max-width: 680px;
+    text-align: center;
+}
+
+.card.form {
+    max-width: 480px;
+    width: 100%;
+}
+
+/* ========================================
+   Button Groups
+   ======================================== */
+.btn-group {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-group form {
+    margin: 0;
+    display: flex;
+}
+
+/* ========================================
+   Buttons
+   ======================================== */
+.btn {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--text-primary);
+    text-decoration: none;
+    border: 1px solid var(--border-color);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.btn.small {
+    padding: 7px 12px;
+    font-size: 13px;
+}
+
+.btn.primary {
+    background: linear-gradient(90deg, var(--brand-color), var(--accent-color));
+    border: none;
+    color: #04111a;
+}
+
+.btn.secondary {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+button[type="submit"],
+.btn-submit {
+    width: 100%;
+    margin-top: 16px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: none;
+    background: linear-gradient(90deg, var(--brand-color), var(--accent-color));
+    color: #04111a;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+button[type="submit"]:hover,
+.btn-submit:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* ========================================
+   Forms
+   ======================================== */
+form.card {
+    display: block;
+}
+
+label {
+    display: block;
+    margin-top: 16px;
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 12px 14px;
+    margin-top: 6px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--text-primary);
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--brand-color);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--text-muted);
+    opacity: 0.6;
+}
+
+/* ========================================
+   Links
+   ======================================== */
+a {
+    color: var(--brand-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+@media (max-width: 768px) {
+    .container {
+        padding: 16px 12px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .header-row {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+
+    .header-row nav {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 16px;
+    }
+
+    .btn {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+}
