@@ -38,6 +38,9 @@ db.sqlite3-journal
 # Frontend
 frontend
 
+# Project specific
+steps.txt
+
 # Compiled files
 *.com
 *.class

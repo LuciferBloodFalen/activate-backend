@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" cxontent="width=device-width, initial-scale=1.0">
+    <title>Home - Task Manager</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="hero">
+        <div class="container-sm">
+            <h1>Task Manager</h1>
+            <p>Organize your tasks with simplicity and style</p>
+            
+            <div class="hero-buttons">
+                <a href="{% url 'login' %}" class="btn btn-success">Login</a>
+                <a href="{% url 'signup' %}" class="btn">Get Started</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
